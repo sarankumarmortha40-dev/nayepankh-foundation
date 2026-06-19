@@ -9,15 +9,13 @@ load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-if not SUPABASE_URL:
-    raise Exception("SUPABASE_URL NOT FOUND")
-
-if not SUPABASE_KEY:
-    raise Exception("SUPABASE_KEY NOT FOUND")
-
-supabase = create_client(
-    SUPABASE_URL,
-    SUPABASE_KEY
+raise Exception(
+    f"SUPABASE_URL={SUPABASE_URL}, SUPABASE_KEY_EXISTS={bool(SUPABASE_KEY)}"
+    
+    # supabase = create_client(
+#     SUPABASE_URL,
+#     SUPABASE_KEY
+# )
 )
 
 app = Flask(__name__)
