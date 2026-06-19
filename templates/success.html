@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+
+```
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}">
+```
+
+</head>
+<body>
+
+<section class="success-page">
+
+```
+<div class="success-card">
+
+    <div class="success-icon">
+        🎉
+    </div>
+
+    <h1>Registration Successful!</h1>
+
+    <p>
+        Thank you <strong>{{ volunteer_name }}</strong>
+        for registering with NayePankh Foundation.
+    </p>
+
+    <p>
+        We have received your application and our team
+        will contact you soon.
+    </p>
+
+    <p>
+        A confirmation email has been sent to your inbox.
+    </p>
+
+    <h2 class="volunteer-name">
+    Thank You {{ volunteer_name }}
+</h2>
+
+<a href="/" class="btn">
+    Return Home
+</a>
+
+</div>
+```
+
+</section>
+
+</body>
+</html>

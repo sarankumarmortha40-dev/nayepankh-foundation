@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NayePankh Foundation</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar container">
+
+        <div class="logo">
+            NayePankh Foundation
+        </div>
+
+        <a href="/" class="btn btn-primary">
+            Logout
+        </a>
+
+    </nav>
+</header>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Admin Dashboard</h2>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <h3>{{ total_volunteers }}</h3>
+                <p>Total Volunteers</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>350</h3>
+                <p>Events Conducted</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>50K</h3>
+                <p>Beneficiaries Reached</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>80</h3>
+                <p>Partner Organizations</p>
+            </div>
+<div class="analytics-grid">
+
+    <div class="analytics-card">
+        <h2>{{ total_volunteers }}</h2>
+        <p>Total Volunteers</p>
+    </div>
+
+    <div class="analytics-card">
+        <h2>{{ education }}</h2>
+        <p>Education Support</p>
+    </div>
+
+    <div class="analytics-card">
+        <h2>{{ youth }}</h2>
+        <p>Youth Empowerment</p>
+    </div>
+
+    <div class="analytics-card">
+        <h2>{{ community }}</h2>
+        <p>Community Development</p>
+    </div>
+
+    <div class="analytics-card">
+        <h2>{{ skill }}</h2>
+        <p>Skill Development</p>
+    </div>
+
+</div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Registered Volunteers</h2>
+        </div>
+
+        <table style="width:100%;border-collapse:collapse;background:white;">
+
+            <thead>
+
+                <tr>
+                    <th style="padding:15px;border:1px solid #ddd;">Name</th>
+                    <th style="padding:15px;border:1px solid #ddd;">Email</th>
+                    <th style="padding:15px;border:1px solid #ddd;">Phone</th>
+                    <th style="padding:15px;border:1px solid #ddd;">Program</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+{% for volunteer in volunteers %}
+
+<tr>
+    <td>{{ volunteer.full_name }}</td>
+    <td>{{ volunteer.email }}</td>
+    <td>{{ volunteer.phone }}</td>
+    <td>{{ volunteer.program }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+        </table>
+
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Registration | NayePankh Foundation</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+        <nav class="navbar container">
+
+            <div class="logo">
+    <a href="/">NayePankh Foundation</a>
+</div>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/programs">Programs</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <a href="/login" class="btn btn-primary">
+                Login
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- Registration Section -->
+
+    <section class="registration section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Volunteer Registration</h2>
+                <p>
+                    Join our mission and help us create a positive impact in communities.
+                </p>
+            </div>
+
+            <div class="registration-card">
+
+                <form id="volunteerForm" method="POST">
+
+                    <div class="form-grid">
+
+                        <!-- Personal Information -->
+
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="full_name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" name="age" min="18" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" name="city" required>
+                        </div>
+
+                        <!-- Volunteer Details -->
+
+                        <div class="form-group">
+                            <label>Skills</label>
+                            <input type="text"
+                                   name="skills"
+                                   placeholder="Teaching, Design, Public Speaking">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Availability</label>
+                            <select name="availability" required>
+                                <option value="">Select Availability</option>
+                                <option>Weekdays</option>
+                                <option>Weekends</option>
+                                <option>Flexible</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Preferred Program</label>
+
+                            <select name="program" required>
+                                <option value="">Select Program</option>
+                                <option>Education Support</option>
+                                <option>Youth Empowerment</option>
+                                <option>Community Development</option>
+                                <option>Skill Development</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Why do you want to volunteer?</label>
+
+                            <textarea
+                                name="reason"
+                                rows="5"
+                                placeholder="Tell us about your motivation to volunteer..."
+                                required></textarea>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        Register as Volunteer
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="container">
+            <p style="text-align:center;">
+                © 2026 NayePankh Foundation. All Rights Reserved.
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

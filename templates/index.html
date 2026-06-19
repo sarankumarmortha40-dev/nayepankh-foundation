@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NayePankh Foundation</title>
+
+    <link rel="icon"
+      href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Navigation -->
+
+    <header class="header">
+        <nav class="navbar container">
+
+           <div class="logo">
+    <a href="/">NayePankh Foundation</a>
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+
+            <div class="flash-message">
+                {{ message }}
+            </div>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('programs') }}">Programs</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <a href="/register" class="btn btn-outline">
+    Volunteer Registration
+</a>
+                <a href="/login" class="btn btn-primary">
+                     Login
+</a>
+            </div>
+
+            <div class="hamburger">
+                ☰
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Hero -->
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-tag">
+                    Empowering Communities Through Volunteers
+                </span>
+
+                <h1>
+                    Together We Create Better Futures
+                </h1>
+
+                <p>
+                    NayePankh Foundation connects passionate volunteers
+                    with meaningful initiatives that transform lives,
+                    strengthen communities, and create sustainable impact.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/register" class="btn btn-primary">
+                        Volunteer Now
+                    </a>
+
+                    <a href="/programs" class="btn btn-secondary">
+                        Learn More
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="hero-image">
+    <img src="{{ url_for('static', filename='images/hero.png') }}"
+         alt="Hero Image">
+</div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Statistics -->
+
+    <section class="stats section">
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Our Impact</h2>
+            </div>
+
+            <div class="stats-grid">
+
+                {% for stat in stats %}
+                <div class="stat-card">
+                    <h3>{{ stat.value }}</h3>
+                    <p>{{ stat.title }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Programs -->
+
+    <section class="programs section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Our Programs</h2>
+                <p>
+                    Creating opportunities and positive change through
+                    focused community initiatives.
+                </p>
+            </div>
+
+            <div class="program-grid">
+
+                <div class="program-card">
+                    <h3>Education Support</h3>
+                    <p>
+                        Helping children access quality education and learning resources.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>Youth Empowerment</h3>
+                    <p>
+                        Building confidence and leadership skills among young individuals.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>Community Development</h3>
+                    <p>
+                        Strengthening communities through collaborative initiatives.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>Skill Development</h3>
+                    <p>
+                        Equipping people with practical skills for sustainable growth.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Testimonials -->
+
+    <section class="testimonials section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Volunteer Stories</h2>
+            </div>
+
+            <div class="testimonial-grid">
+
+                <div class="testimonial-card">
+                    <p>
+                        "Volunteering here gave me an opportunity to create
+                        real impact while learning leadership skills."
+                    </p>
+
+                    <h4>Rahul Sharma</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>
+                        "The experience helped me connect with communities
+                        and contribute toward meaningful social change."
+                    </p>
+
+                    <h4>Priya Verma</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <p>
+                        "Every event is organized professionally and makes
+                        a visible difference in people's lives."
+                    </p>
+
+                    <h4>Ankit Reddy</h4>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>Become a Volunteer Today</h2>
+
+            <p>
+                Join our mission and help create lasting impact.
+            </p>
+
+            <a href="#" class="btn btn-primary">
+                Register Now
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div>
+                <h3>NayePankh Foundation</h3>
+
+                <p>
+                    Creating positive change through volunteer-driven initiatives.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+
+                <ul>
+                  <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('programs') }}">Programs</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+
+                <p>info@nayePankh.org</p>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+
+                <p>
+                    <a href="https://www.facebook.com/nayepankhfoundation" target="_blank">Facebook</a> |
+                    <a href="https://www.linkedin.com/company/nayepankh/" target="_blank">LinkedIn</a> |
+                    <a href="https://www.instagram.com/nayepankhfoundation?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="" target="_blank">Instagram</a>
+                </p>
+            
+        </div>
+
+        <div class="copyright">
+            © 2026 NayePankh Foundation. All Rights Reserved.
+        </div>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

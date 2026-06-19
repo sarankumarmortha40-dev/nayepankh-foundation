@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal | NayePankh Foundation</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <!-- Admin Header -->
+
+    <header class="admin-header">
+        <div class="container">
+
+            <div class="admin-logo">
+                NayePankh Admin Portal
+            </div>
+
+            <a href="/logout" class="btn btn-primary">
+                Logout
+            </a>
+
+        </div>
+    </header>
+
+    <!-- Dashboard Stats -->
+
+    <section class="admin-stats">
+
+        <div class="container">
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h2>{{ volunteers|length }}</h2>
+                    <p>Total Volunteers</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>{{ volunteers|length }}</h2>
+                    <p>Registrations</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>Active</h2>
+                    <p>System Status</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Volunteer Table -->
+
+    <section class="admin-table-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Volunteer Registrations</h2>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table class="volunteer-table">
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Program</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        {% for volunteer in volunteers %}
+
+                        <tr>
+                            <td>{{ volunteer.full_name }}</td>
+                            <td>{{ volunteer.email }}</td>
+                            <td>{{ volunteer.phone }}</td>
+                            <td>{{ volunteer.program }}</td>
+                            <td>{{ volunteer.city }}</td>
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
