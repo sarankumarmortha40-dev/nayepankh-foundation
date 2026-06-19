@@ -9,8 +9,11 @@ load_dotenv()
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 
-print("SUPABASE_URL =", SUPABASE_URL)
-print("SUPABASE_KEY EXISTS =", bool(SUPABASE_KEY))
+if not SUPABASE_URL:
+    raise Exception("SUPABASE_URL NOT FOUND")
+
+if not SUPABASE_KEY:
+    raise Exception("SUPABASE_KEY NOT FOUND")
 
 supabase = create_client(
     SUPABASE_URL,
