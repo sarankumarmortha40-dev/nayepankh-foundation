@@ -79,15 +79,16 @@ def register():
     <p>Our team will contact you soon.</p>
     """
 
-    mail.send(msg)
-
-    # Success Page
+    try:
+        mail.send(msg)
+    except Exception as e:
+        print("Email Error:", str(e))
     return render_template(
         "success.html",
         volunteer_name=data["full_name"]
     )
 
- return render_template("register.html")
+    return render_template("register.html")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
