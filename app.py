@@ -79,7 +79,7 @@ def register():
     <p>Our team will contact you soon.</p>
     """
 
-    mail.send(msg)
+    #mail.send(msg)
 
     # Success Page
     return render_template(
