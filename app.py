@@ -81,7 +81,8 @@ def register():
     """
 
     try:
-        mail.send(msg)
+        #mail.send(msg)
+        pass
     except Exception as e:
         print("Email Error:", str(e))
 
