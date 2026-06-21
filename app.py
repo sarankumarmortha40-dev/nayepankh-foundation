@@ -44,6 +44,7 @@ def home():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
 
+
  if request.method == 'POST':
 
     data = {
@@ -59,15 +60,15 @@ def register():
         "reason": request.form["reason"]
     }
 
-    # Save to Supabase
+    # Save volunteer to Supabase
     supabase.table("volunteers").insert(data).execute()
 
-    # Send Email
+    # Welcome Email
     msg = Message(
-    subject="Welcome to NayePankh Foundation",
-    sender=app.config['MAIL_USERNAME'],
-    recipients=[data["email"]]
-)
+        subject="Welcome to NayePankh Foundation",
+        sender=app.config['MAIL_DEFAULT_SENDER'],
+        recipients=[data["email"]]
+    )
 
     msg.html = f"""
     <h2>Welcome {data['full_name']} 🎉</h2>
@@ -83,12 +84,14 @@ def register():
         mail.send(msg)
     except Exception as e:
         print("Email Error:", str(e))
+
     return render_template(
         "success.html",
         volunteer_name=data["full_name"]
     )
 
-    return render_template("register.html")
+ return render_template("register.html")
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
